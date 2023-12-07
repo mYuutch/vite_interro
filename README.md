@@ -8,6 +8,7 @@
     - À propos
     - Projets/Portfolio
     - Compétences
+    - FAQ
     - Formulaire de Contact
     - Footer
 - CSS
@@ -19,10 +20,12 @@
     - Grid filtrée
     - Formulaire de contact controlé
     - Utilisation de composants alpine
+    - Déploiement questions FAQ + animation flèche
 - Bonus
-  - Animations stateful (je crois) sur les éléments de la grid onleave et onenter
+  - Animations stateful sur les éléments de la grid onleave et onenter
+  - Zoom Image (erreur console à cause du state null mais fonctionne)
 
 ## Liste des choses manquantes 
 
-- zoom image ( ne fonctionne pas )
+
 
