@@ -9,15 +9,18 @@ export default function Projets(){
             { id:5, category:'js', url:'https://picsum.photos/500/500?random=4'},
             { id:6, category:'js', url:'https://picsum.photos/500/500?random=6'},
         ],
+        selectedImage: null,
+        isImageOpened: false,
         setFilter(filter){
             this.filter = filter
         },
-        openImage(){
-            this.openedImage = image;
-            this.isImageOpened = true;
-        },
+        openImage(image){
+            this.selectedImage = image
+            this.isImageOpened = true
+        },  
         closeImage(){
-            this.isImageOpened = false
+            this.isImageOpened = false;
+            this.selectedImage = null;
         }
     }
 }
