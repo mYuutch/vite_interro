@@ -7,7 +7,7 @@
    
 
 </head>
-<body class="bg-neutral-800 text-neutral-50 md:text-2xl">
+<body class="bg-neutral-800 text-neutral-50 md:text-2xl font-sans">
 
     <!-- MENU -->
     <header class="container mx-auto p-5 md:mb-24">
@@ -86,8 +86,8 @@
         </div>
 
   
-        <button x-transition x-show="shown" class="p-5 rounded text-slate-100 bg-blue-300 md:w-1/2 md:ml-auto">Contact</button>
-        <button x-transition x-show="shown" class="p-4 border-2 rounded border-blue-300 text-blue-300 md:w-1/2">Projets</button>
+        <button @click="document.getElementById('contact').scrollIntoView();" x-transition x-show="shown" class="p-5 rounded text-slate-100 bg-blue-300 md:w-1/2 md:ml-auto">Contact</button>
+        <button @click="document.getElementById('projets').scrollIntoView();" x-transition x-show="shown" class="p-4 border-2 rounded border-blue-300 text-blue-300 md:w-1/2">Projets</button>
     </main>
     <!---->
 
@@ -101,7 +101,7 @@
     <!---->
 
     <!--PORTFOLIO : GRID AVEC FILTRES = TOUT PAR DEFAUT ET 1 TRUC PARTICULIER-->
-    <section x-data="{ shown: false}" x-intersect.treshold.half="shown = true" class="p-5 container mx-auto md:mb-24">
+    <section id="projets" x-data="{ shown: false}" x-intersect.treshold.half="shown = true" class="p-5 container mx-auto md:mb-24">
         <h1 x-transition x-show="shown" class="text-xl mb-5 md:mb-12 md:text-4xl">Projets</h1>
         <div  x-data="Projets">
             <div class="grid grid-cols-3 mb-5" id="filtres">
@@ -109,7 +109,7 @@
                 <button x-transition x-show="shown"  class="pb-3" @click="setFilter('js')" :class="{ 'border-b-2 border-blue-300': filter === 'js' }">JS</button>
                 <button x-transition x-show="shown"  class="pb-3" @click="setFilter('php')" :class="{ 'border-b-2 border-blue-300': filter === 'php' }">PHP</button>
             </div>
-            <div class="grid grid-cols-2 gap-5 md:grid-cols-4" id="projets">
+            <div class="grid grid-cols-2 gap-5 md:grid-cols-4">
                 <template 
                 
                     x-for="image in images" :key="image.id">
@@ -145,7 +145,7 @@
     <!---->
 
     <!--FAQ-->
-    <section class="p-5 container mx-auto md:mb-24 flex flex-col" 
+    <section id="faq" class="p-5 container mx-auto md:mb-24 flex flex-col" 
     x-data="{
         shown:false,
     questions: [
@@ -175,7 +175,7 @@
     </section>
 
     <!--COMPÉTENCES : GRID ? BANDEAU ?-->
-    <section x-data="{ shown: false }" x-intersect.treshold.half="shown = true" class="p-5 container mx-auto md:mb-24">
+    <section id="skills" x-data="{ shown: false }" x-intersect.treshold.half="shown = true" class="p-5 container mx-auto md:mb-24">
         <h1 x-transition x-show="shown" class="text-xl mb-5 md:mb-12 md:text-4xl">Compétences</h1>
         <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
             <div x-transition x-show="shown" class="flex flex-col items-center justify-center">
@@ -205,7 +205,7 @@
     <!---->
 
     <!--CONTACT-->
-    <section class="p-5 container mx-auto md:mb-24">
+    <section id="contact" class="p-5 container mx-auto md:mb-24">
         <h1 class="text-xl mb-5 md:mb-12 md:text-4xl">Me contacter</h1>
         <div x-data="FormHandler" class="">
             <form @submit.prevent="submitForm"  action="#" class="flex flex-col items-center justify-center gap-5">
